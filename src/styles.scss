@@ -2,3 +2,49 @@
 @import "~primeicons/primeicons.css";
 @import "~primeng/resources/themes/vela-orange/theme.css";
 @import "~primeng/resources/primeng.min.css";
+@import "~primeflex/primeflex.css";
+/* Color Theme Swatches in RGBA */
+$moz-red-color: rgba(186, 31, 31, 1);
+$moz-dark-color: rgba(5, 17, 28, 1);
+$moz-light-grey: rgba(189, 198, 198, 1);
+$moz-yellow-color: rgba(255, 235, 77, 1);
+$moz-black-color: rgba(17, 18, 23, 1);
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.bg-dark {
+  background: $moz-dark-color;
+}
+
+.bg-light-grey {
+  background: $moz-light-grey;
+}
+/* Color Theme Swatches in Hex */
+// $Yellow-Grey-Red-1-hex: #bb2020;
+// $Yellow-Grey-Red-2-hex: #06111c;
+// $Yellow-Grey-Red-3-hex: #bec7c7;
+// $Yellow-Grey-Red-4-hex: #ffeb4d;
+// $Yellow-Grey-Red-5-hex: #121317;
+
+.admin-container {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #fff;
+}
+
+.side-bar {
+  height: 101vh;
+  overflow-y: auto;
+  padding: 1rem 2rem;
+}
