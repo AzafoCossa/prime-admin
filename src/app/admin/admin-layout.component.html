@@ -1,2 +1,65 @@
-<p>admin-layout works!</p>
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <div class="admin-container bg-dark">
+    <div class="p-grid">
+      <div class="p-col-2 side-bar bg-light-grey">
+        <div class="side-bar-header">
+          <h2 class="brand">PrimeAdmin</h2>
+        </div>
+        <div class="side-bar-menu">
+          <app-side-bar></app-side-bar>
+        </div>
+      </div>
+      <div class="p-col-10 admin-content">
+        <div class="nav-bar">
+          <div>
+            <i class="pi pi-list text-dark h3"></i>
+            <span class="p-input-icon-right p-mx-4">
+              <i class="pi pi-search" (click)="searchTerm()"></i>
+              <input
+                type="text"
+                pInputText
+                [(ngModel)]="search"
+                name="search"
+                placeholder="Search"
+              />
+            </span>
+          </div>
+          <div class="left-items text-dark">
+            <i class="pi pi-envelope p-mx-4" pBadge value="2"></i>
+            <i class="pi pi-bell p-mx-4" pBadge value="2"></i>
+            <p-menu
+              #notifications
+              [popup]="true"
+              [model]="settingsOptions"
+              styleClass="p-mt-2"
+            ></p-menu>
+
+            <div class="settings">
+              <p-avatar
+                class="p-ml-2"
+                image="/assets/images/profile/small-profile-image.png"
+                pBadge
+                value="4"
+                severity="danger"
+                size="large"
+                shape="circle"
+                (click)="optionsMenu.toggle($event)"
+              ></p-avatar>
+              <p-menu
+                #optionsMenu
+                [popup]="true"
+                [model]="settingsOptions"
+                styleClass="p-mt-2"
+              ></p-menu>
+            </div>
+          </div>
+        </div>
+        <main class="main-content"><router-outlet></router-outlet></main>
+        <div class="footer text-dark">
+          <div><h4>Prime-Admin demo &copy;</h4></div>
+          <div class="left-items"><h3>All rights reserved</h3></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
